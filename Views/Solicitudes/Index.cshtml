@@ -1,0 +1,33 @@
+@model IEnumerable<evaluacion20262.Models.SolicitudServicio>
+
+@{
+    ViewData["Title"] = "Solicitudes";
+}
+
+<h1>Solicitudes de Servicio</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Teléfono</th>
+            <th>Distrito</th>
+            <th>Tipo de Servicio</th>
+            <th>Descripción</th>
+            <th>Fecha de Registro</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var solicitud in Model)
+        {
+            <tr>
+                <td>@solicitud.Cliente</td>
+                <td>@solicitud.Telefono</td>
+                <td>@solicitud.Distrito</td>
+                <td>@solicitud.TipoServicio</td>
+                <td>@solicitud.Descripcion</td>
+                <td>@solicitud.FechaRegistro.ToString("dd/MM/yyyy HH:mm")</td>
+            </tr>
+        }
+    </tbody>
+</table>

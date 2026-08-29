@@ -1,5 +1,6 @@
 using evaluacion20262.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace evaluacion20262.Controllers
 {
@@ -30,6 +31,15 @@ namespace evaluacion20262.Controllers
             }
 
             return View(solicitud);
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var solicitudes = await _context.Solicitudes
+                .OrderByDescending(s => s.FechaRegistro)
+                .ToListAsync();
+
+            return View(solicitudes);
         }
     }
 }
