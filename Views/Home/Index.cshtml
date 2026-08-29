@@ -1,8 +1,217 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    body {
+        background: #f4f7fb;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #0d47a1, #1976d2);
+        color: white;
+        border-radius: 20px;
+        padding: 55px 40px;
+        margin-top: 25px;
+        margin-bottom: 35px;
+        box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    }
+
+    .hero h1 {
+        font-size: 46px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 19px;
+        margin-bottom: 5px;
+    }
+
+    .hero .small-text {
+        font-size: 15px;
+        opacity: .85;
+        margin-top: 15px;
+    }
+
+    .card-option {
+        background: white;
+        border: none;
+        border-radius: 18px;
+        padding: 35px 30px;
+        height: 100%;
+        box-shadow: 0 7px 25px rgba(0,0,0,.08);
+        transition: .2s;
+    }
+
+    .card-option:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0,0,0,.13);
+    }
+
+    .icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .card-option h3 {
+        font-weight: 700;
+        color: #12345b;
+    }
+
+    .card-option p {
+        color: #6c757d;
+        min-height: 48px;
+    }
+
+    .btn-main {
+        border-radius: 9px;
+        padding: 11px 22px;
+        font-weight: 600;
+    }
+
+    .info {
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        margin-top: 35px;
+        box-shadow: 0 5px 18px rgba(0,0,0,.06);
+    }
+
+    .info h4 {
+        color: #12345b;
+        font-weight: 700;
+    }
+</style>
+
+<div class="container">
+
+    <!-- ENCABEZADO -->
+    <div class="hero">
+
+        <div class="row align-items-center">
+
+            <div class="col-md-8">
+
+                <h1>🔥 TecnoGas Hogar</h1>
+
+                <p>
+                    Portal de Solicitudes de Servicio Técnico
+                </p>
+
+                <p class="small-text">
+                    Sistema para registrar y consultar solicitudes
+                    de atención técnica de nuestros clientes.
+                </p>
+
+            </div>
+
+            <div class="col-md-4 text-center">
+
+                <div style="font-size: 90px;">
+                    🔧
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACCESOS DIRECTOS -->
+    <div class="text-center mb-4">
+
+        <h2 class="fw-bold">
+            Gestión de solicitudes
+        </h2>
+
+        <p class="text-muted">
+            Selecciona una opción para continuar
+        </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+        <!-- REGISTRAR -->
+        <div class="col-md-6">
+
+            <div class="card-option text-center">
+
+                <div class="icon">
+                    📝
+                </div>
+
+                <h3>
+                    Registrar solicitud
+                </h3>
+
+                <p>
+                    Registra una nueva solicitud de servicio
+                    ingresando los datos del cliente y del problema.
+                </p>
+
+                <a asp-controller="Solicitudes"
+                   asp-action="Crear"
+                   class="btn btn-primary btn-main">
+
+                    + Registrar solicitud
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LISTADO -->
+        <div class="col-md-6">
+
+            <div class="card-option text-center">
+
+                <div class="icon">
+                    📋
+                </div>
+
+                <h3>
+                    Ver solicitudes
+                </h3>
+
+                <p>
+                    Consulta todas las solicitudes registradas
+                    en el sistema.
+                </p>
+
+                <a asp-controller="Solicitudes"
+                   asp-action="Index"
+                   class="btn btn-success btn-main">
+
+                    Ver solicitudes
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- INFORMACIÓN -->
+    <div class="info">
+
+        <h4>
+            ℹ️ Portal de atención técnica
+        </h4>
+
+        <p class="text-muted mb-0">
+            Desde este portal puedes registrar nuevas solicitudes
+            y consultar las solicitudes almacenadas en el sistema
+            de TecnoGas Hogar.
+        </p>
+
+    </div>
+
 </div>
